@@ -55,6 +55,9 @@ const App = (props) => {
     touched: {
       firstName: false,
       lastName: false,
+      email: false,
+      tel: false,
+      dateOfBirth: false,
     },
   }
   const [formData, setFormData] = useState(initialState)
@@ -141,13 +144,41 @@ const App = (props) => {
     // Object to collect error feedback and to display on the form
     const errors = {
       firstName: '',
+      lastName: '',
+      email: '',
+      tel: '',
+      dateOfBirth: '',
     }
 
+    //firstName
     if (
       (formData.touched.firstName && formData.firstName.length < 3) ||
       (formData.touched.firstName && formData.firstName.length > 12)
     ) {
       errors.firstName = 'First name must be between 2 and 12'
+    }
+
+    //lastName
+    if (
+      (this.state.touched.lastName && this.state.lastName.length < 3) ||
+      (this.state.touched.lastName && this.state.lastName.length > 12)
+    ) {
+      errors.lastName = 'Last name must be between 2 and 12'
+    }
+
+    //email
+    if (this.state.touched.email && !this.state.email.includes('@') && !this.state.email.includes('.')) {
+      errors.email = 'Incorrect email'
+    }
+
+    //tel
+    if (this.state.touched.tel && this.state.tel.length < 5) {
+      errors.tel = 'Incorrect telephone'
+    }
+
+    //dateOfBirth
+    if (this.state.touched.dateOfBirth && this.state.dateOfBirth === '') {
+      errors.dateOfBirth = 'Please choose your date of birth'
     }
     return errors
   }
@@ -196,8 +227,11 @@ const App = (props) => {
               name='lastName'
               value={lastName}
               onChange={onChange}
+              onBlur={onBlur}
               placeholder='Last Name'
             />
+            <br />
+            {errors.lastName && <small>{errors.lastName}</small>}
           </div>
           <div className='form-group'>
             <label htmlFor='title'>Title </label>
@@ -218,8 +252,11 @@ const App = (props) => {
               name='email'
               value={email}
               onChange={onChange}
+              onBlur={onBlur}
               placeholder='Email'
             />
+            <br />
+            {errors.email && <small>{errors.email}</small>}
           </div>
         </div>
 
@@ -231,8 +268,11 @@ const App = (props) => {
             name='tel'
             value={tel}
             onChange={onChange}
+            onBlur={onBlur}
             placeholder='Tel'
           />
+          <br />
+            {errors.tel && <small>{errors.tel}</small>}
         </div>
 
         <div className='form-group'>
@@ -243,8 +283,11 @@ const App = (props) => {
             name='dateOfBirth'
             value={dateOfBirth}
             onChange={onChange}
+            onBlur={onBlur}
             placeholder='Date of Birth'
           />
+          <br />
+            {errors.dateOfBirth && <small>{errors.dateOfBirth}</small>}
         </div>
         <div className='form-group'>
           <label htmlFor='favoriteColor'>Favorite Color</label>
