@@ -1,0 +1,161 @@
+/* === GENERAL === */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --font-family-heading: 'Poppins', serif;
+  --font-family-body: 'Cardo', sans-serif;
+  --font-family-body: 'Poppins', sans-serif;
+  --color-primary: #3b2f63;
+  --colr-primary: #002f6c;
+  --color-primary-lighter: #794aa2;
+  --color-primary-lighter: #002f6c;
+  --color-text: #525c65;
+  --background-body: #f9fbfe;
+  --font-size-regular-text: 18px;
+  --font-size-heading: 26px;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--background-body);
+  line-height: 1.5;
+  // font-family: var(--font-family-body);
+  font-size: 1rem;
+  font-family: Poppins;
+  overflow-x: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  color: #283747 !important;
+  font-family: 'Roboto Slab';
+  // font-family: 'Poppins';
+}
+
+.header-wrapper,
+.main-wrapper,
+.footer-wrapper {
+  margin: auto;
+  width: 80%;
+}
+
+/* === app wrapper === */
+#root {
+  min-height: 100%;
+  position: relative;
+  letter-spacing: 1.25px;
+}
+
+/* === MAIN === */
+main {
+  padding-bottom: 350px;
+  font-size: 130%;
+}
+
+h1,
+h2,
+h3,
+/* h4, */
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 300;
+  font-size: var(--font-size-heading);
+  // text-transform: uppercase;
+  // font-family: 'Roboto Slab';
+}
+
+p {
+  font-family: var(--font-family-body);
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li a {
+  // color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+small {
+  font-size: 18px !important;
+  font-family: 'Roboto' !important;
+}
+
+// scroller bar style
+/* width */
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px blue;
+  background: #4776e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8e54e9,
+    #4776e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8e54e9,
+    #4776e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #61dbfb;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2acef7;
+}
+@media (max-width: 768px) {
+  /* === MAIN === */
+
+  html,
+  body {
+    font-size: 0.75rem;
+  }
+
+  main {
+    padding-bottom: 300px;
+  }
+  // scroller bar style
+  /* width */
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  h1,
+  h2 {
+    font-size: 16px !important;
+  }
+  // scroller bar style
+/* width */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+}

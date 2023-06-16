@@ -1,0 +1,66 @@
+/* === HEADER === */
+.Header {
+  padding: 10px 0px;
+  font-size: 130%;
+  background: #4776e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8e54e9,
+    #4776e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8e54e9,
+    #4776e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#title {
+  text-transform: uppercase;
+  color: rgb(221, 204, 204);
+  font-size: 42px;
+  font-weight: 600;
+  font-family: 'Roboto Slab';
+  color: #61dbfb !important;
+  text-shadow: 1px 1px rgb(29, 27, 27);
+}
+
+#menu li {
+  list-style: none;
+  margin: 15px;
+  display: inline-block;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  padding: 3px;
+  font-family: 'Poppins';
+}
+.active {
+  border-bottom: 3px solid #61dbfb;
+}
+
+@media (max-width: 768px) {
+  #title {
+    font-size: 28px !important;
+    font-weight: 600;
+    font-family: 'Roboto Slab';
+  }
+
+  #menu li {
+    list-style: none;
+    margin: 5px;
+    display: inline-block;
+  }
+
+  li a {
+    color: white;
+    text-decoration: none;
+    padding: 3px;
+    font-size: 12px !important;
+  }
+  .active {
+    border-bottom: 3px solid #61dbfb;
+  }
+}
