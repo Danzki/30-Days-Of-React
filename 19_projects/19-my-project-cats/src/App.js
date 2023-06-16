@@ -31,8 +31,8 @@ class App extends Component {
     }
 
     componentDidMount() {
-        // this.fetchCountryData()
-        this.loadStaticData()
+        this.fetchCountryData()
+        // this.loadStaticData()
     }
     fetchCountryData = async () => {
         const url = 'https://api.thecatapi.com/v1/breeds'
