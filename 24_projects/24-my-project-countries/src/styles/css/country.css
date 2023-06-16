@@ -1,0 +1,44 @@
+.countries-wrapper {
+    background: #f0f0f0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-items: center;
+    margin: 1rem 0 3rem;
+    padding: 1rem;
+}
+
+.country {
+    max-width: 25rem;
+    min-width: 25rem;
+    text-align: center;
+    margin: 0.5rem;
+    padding: 2rem;
+    border-radius: 0.2rem;
+    background: #fff;
+}
+
+.country_flag {
+    height: 12rem;
+    width: 20rem;
+    text-align: center;
+    margin: auto;
+}
+
+.country_name {
+    font-size: 1.6rem;
+    color: orange;
+    letter-spacing: .075rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-family: "Poppins",sans-serif;
+    font-weight: 300;
+}
+
+span {
+    font-weight: 400;
+    color: #616161;
+}
