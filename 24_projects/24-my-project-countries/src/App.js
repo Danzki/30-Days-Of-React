@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Header } from './components/header/Header'
 import { Footer } from './components/footer/Footer'
 import { Countries } from './components/countries/Countries'
 import Graphs from './components/graphs/Graphs'
 import { countriesData } from './data/countries'
 import { tenHighestPopulation } from './data/ten_most_highest_populations.js'
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from 'react-router-dom'
 
 function getTopSpokenLangs(countries, count) {
     let langs = [].concat(...countries
@@ -34,6 +38,24 @@ function getTopSpokenLangs(countries, count) {
     return langUsesArr
 }
 
+function getLanguage(languageObj) {
+    const langs = []
+    for (let key in languageObj) {
+        langs.push(languageObj[key])
+    }
+    return langs
+}
+
+function getCurrency(ccyObj) {
+    for (let key in ccyObj) {
+        return ccyObj[key].name
+    }
+}
+
+function getCapital(capitalArr) {
+    return capitalArr[0]
+}
+
 export const App = (props) => {
     // setting initial state and method to update state
     const [data, setData] = useState([])
@@ -42,19 +64,34 @@ export const App = (props) => {
     const [languages, setLanguages] = useState([])
 
     useEffect(() => {
-        // fetchData()
-        loadData()
+        fetchData()
+        // loadData()
         loadPopulation()
         loadLanguages()
     }, [])
 
     const fetchData = async () => {
-        const url = 'https://restcountries.eu/rest/v2/all'
+        // const url = 'https://restcountries.com/rest/v2/all'
+        // const url = 'https://restcountries.com/v3.1/all'
+        const url = 'https://restcountries.com/v3.1/all?fields=name,capital,languages,population,flags,currencies'
         try {
             const response = await fetch(url)
             const data = await response.json()
-            setData(data)
-            setCount(data.length)
+
+            const formattedData = data
+                .map((country) => {
+                    return {
+                        name: country.name.common,
+                        capital: getCapital(country.capital),
+                        languages: getLanguage(country.languages),
+                        population: country.population,
+                        flag: country.flags.svg,
+                        currency: getCurrency(country.currencies),
+                    }
+                })
+
+            setData(formattedData)
+            setCount(formattedData.length)
         } catch (error) {
             console.log(error)
         }
@@ -77,13 +114,12 @@ export const App = (props) => {
 
     return (
         <div className='App'>
-            <Header count={count} />
             <Countries data={data} />
             <Graphs
                 population={population}
-                languages={languages}                
-            />            
+                languages={languages} />
             <Footer />
         </div>
+
     )
 }

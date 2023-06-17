@@ -15,7 +15,7 @@ export const Footer = (props) => {
                     <a href="https://www.linkedin.com/in/danzki/" target="_blank" rel="noopener noreferrer">Danzki</a>
                 </small>
                 <div className='arrow'>
-                    <a href="#root"><i className="fas fa-arrow-alt-circle-up"></i></a>
+                    <a href='/country-data#root'><i className='fas fa-arrow-alt-circle-up'></i></a>
                 </div>
             </div>
         </footer>

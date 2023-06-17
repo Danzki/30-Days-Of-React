@@ -265,6 +265,13 @@ i {
   padding: 30px;
   text-align: center;
   height: fit-content;
+
+  small {
+    font-size: 10px;
+    font-family: Montserrat;
+    font-weight: 300;
+    padding-bottom: 10px;
+  }
 }
 .arrow {
   display: flex;

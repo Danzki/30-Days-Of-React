@@ -72,7 +72,7 @@ const Graphs = (props) => {
     }
 
     return (
-        <div className='graph-wrapper'>
+        <div id='stat' className='graph-wrapper'>
             <div className='graph-buttons'>
                 <button className='population' onClick={() => onClickPopulation()}>Population</button>
                 <button className='languages' onClick={() => onClickLanguage()}>Languages</button>
