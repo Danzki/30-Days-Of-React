@@ -36,9 +36,12 @@ export const Countries = (props) => {
     const [filterValue, setFilterValue] = useState('')
     const [equalCount, setEqualCount] = useState(0)
 
+    // console.log(typeof props.data[0].capital)
+    // console.log(props.data[0].capital.includes('a'))
     const equalData = props.data
         .filter(country => {
             if (!filterValue) return true
+            if (country.capital === 'undefined') {console.log(country.capital)}
             if (country.name.includes(filterValue) || country.capital.includes(filterValue)) {
                 return true
             }
@@ -59,7 +62,6 @@ export const Countries = (props) => {
         setEqualCount(equalData.length)
     }
 
-    
     return (
         <div>
             <Header count={props.data.length} equalCount={equalCount} />

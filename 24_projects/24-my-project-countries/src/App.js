@@ -56,6 +56,20 @@ function getCapital(capitalArr) {
     return capitalArr[0]
 }
 
+function getCapitalLength(capitalArr) {
+    return capitalArr.length
+}
+
+function compare(a, b) {
+    if (a.name < b.name) {
+        return -1;
+    }
+    if (a.name > b.name) {
+        return 1;
+    }
+    return 0;
+}
+
 export const App = (props) => {
     // setting initial state and method to update state
     const [data, setData] = useState([])
@@ -79,6 +93,11 @@ export const App = (props) => {
             const data = await response.json()
 
             const formattedData = data
+                .filter((country) => {
+                    if (getCapitalLength(country.capital) > 0) {
+                        return true
+                    }
+                })
                 .map((country) => {
                     return {
                         name: country.name.common,
@@ -89,8 +108,8 @@ export const App = (props) => {
                         currency: getCurrency(country.currencies),
                     }
                 })
-
-            setData(formattedData)
+            
+            setData(formattedData.sort(compare))
             setCount(formattedData.length)
         } catch (error) {
             console.log(error)
