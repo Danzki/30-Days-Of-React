@@ -1,0 +1,69 @@
+.color-app {
+
+}
+
+.header {
+    font-size: 22px; 
+    font-weight: 100; 
+    color: black; 
+    text-align: center; 
+    margin: auto; 
+    font-family: Aldrich;
+}
+
+h1 {
+    font-size: 60px; 
+    margin: 20px 0px 0px; 
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 40px; 
+    margin: 0px 0px 30px; 
+    font-weight: 300; 
+    font-family: Roboto;
+}
+
+.color-generator-row {
+
+}
+
+.generate-color-btn {
+
+}
+
+.colors-wrapper {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    width: 80%; 
+    margin: auto; 
+    text-align: center;
+}
+
+.single-color {
+    width: 160px; 
+    height: 160px; 
+    display: flex; 
+    flex-direction: column; 
+    font-family: Montserrat; 
+    letter-spacing: 0.0625em; 
+    justify-content: space-around; 
+    align-items: center; 
+    margin: 2px; 
+    border-radius: 5px; 
+    font-size: 22px; 
+    padding: 30px; 
+    box-sizing: border-box; 
+    font-weight: 100; 
+    background: rgb(180, 160, 104); 
+    color: rgb(239, 239, 239);
+}
+
+small {
+    font-weight: 500;
+}
+
+.wrapper__copy copy {
+    
+}
